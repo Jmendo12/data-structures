@@ -20,6 +20,10 @@ export class Stack<T> {
   }
 
   pop() {
+    if (this.#size === 0) {
+      throw new Error("Cannot pop elements off an empty stack.");
+    }
+
     const element = this.#elements[this.#topIndex - 1];
     this.#elements.splice(-1, 1);
 

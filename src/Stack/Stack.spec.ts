@@ -32,6 +32,12 @@ describe("Stack", () => {
     expect(stack.pop()).toEqual(elementOne);
   });
 
+  it("Throws an error if attempting to pop an element before any elements are added", () => {
+    const stack = new Stack<number>();
+
+    expect(() => stack.pop()).toThrow();
+  });
+
   it("Can peek the top element on the stack", () => {
     const stack = new Stack<number>();
     const elementOne = 1;
