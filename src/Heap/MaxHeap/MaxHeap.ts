@@ -76,15 +76,14 @@ export class MaxHeap {
 
   #maxHeapify(index: number) {
     const left = index * 2 + 1;
-    const right = index * 2 - 2;
+    const right = index * 2 + 2;
     let largest = index;
 
     if (this.#elements > left && this.#heap[largest] < this.#heap[left]) {
       largest = left;
-    } else if (
-      this.#elements > right &&
-      this.#heap[largest] < this.#heap[right]
-    ) {
+    }
+
+    if (this.#elements > right && this.#heap[largest] < this.#heap[right]) {
       largest = right;
     }
 
