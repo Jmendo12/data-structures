@@ -37,6 +37,7 @@ export class MaxHeap {
 
     if (this.#elements === 1) {
       this.#elements = this.#elements - 1;
+      this.#heap.length = 0;
       return max;
     }
 
